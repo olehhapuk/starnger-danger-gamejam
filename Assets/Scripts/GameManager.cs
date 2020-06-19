@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -31,10 +32,13 @@ public class GameManager : MonoBehaviour
         }
         player.myProperties = players[index];
         player.GetComponent<SpriteRenderer>().sprite = players[index].sprite;
+        player.GetComponentInChildren<Text>().text = players[index].name;
     }
 
     public void KillPlayer(PlayerProperties newProperties)
     {
+        var changedPlayer = false;
+        
         for (int i = 0; i < players.Length; i++)
         {
             if (players[i].name == newProperties.name)
@@ -45,7 +49,13 @@ public class GameManager : MonoBehaviour
             if (!players[i].isDead)
             {
                 ChangePlayer(i);
+                changedPlayer = true;
             }
+        }
+
+        if (!changedPlayer)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }
