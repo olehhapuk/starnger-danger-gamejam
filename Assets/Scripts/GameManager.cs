@@ -2,42 +2,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private PlayerController[] players;
-    
-    private int _activePlayerIndex;
+    [SerializeField] private List<GameObject> players;
+    [SerializeField] private Transform spawner;
+
+    private PlayerController _currentPlayer;
     
     private void Start()
     {
-        players[0].isActive = true;
+        SpawnNewPlayer();
     }
 
-    private void Update()
+    public void ChangePlayer()
     {
-        if (Input.GetButtonDown("Fire1"))
+        players.RemoveAt(0);
+        if (players.Count <= 0)
         {
-            ChangeActivePlayer();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            return;
         }
+        SpawnNewPlayer();
     }
 
-    private void ChangeActivePlayer()
+    private void SpawnNewPlayer()
     {
-        // Set active player index
-        if (_activePlayerIndex < players.Length - 1)
-            _activePlayerIndex++;
-        else
-            _activePlayerIndex = 0;
-
-        // Set player as active
-        players[_activePlayerIndex].isActive = true;
-
-        // Make other player unactive
-        for (int i = 0; i < players.Length; i++)
-        {
-            if (i != _activePlayerIndex)
-                players[i].isActive = false;
-        }
+        _currentPlayer = players[0].GetComponent<PlayerController>();
+        Instantiate(_currentPlayer.gameObject, spawner.position, Quaternion.identity);
     }
 }
