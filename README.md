@@ -1,1 +1,1 @@
-# starnger-danger-gamejam
+# stranger-danger-gamejam
