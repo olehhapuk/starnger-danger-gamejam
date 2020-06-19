@@ -2,11 +2,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerController : MonoBehaviour
 {
+    public PlayerProperties myProperties;
+    
     private GameManager _gm;
-
+    
     private void Awake()
     {
         _gm = FindObjectOfType<GameManager>();
@@ -14,7 +17,10 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        transform.Translate(new Vector2(Input.GetAxisRaw("Horizontal") * 15 * Time.deltaTime, 0));
+        if (myProperties.isDead)
+            return;
+        
+        transform.Translate(new Vector2(Input.GetAxisRaw("Horizontal") * myProperties.moveSpeed * Time.deltaTime, 0));
 
         if (Input.GetButtonDown("Fire2"))
         {
@@ -24,7 +30,7 @@ public class PlayerController : MonoBehaviour
 
     private void Die()
     {
-        _gm.ChangePlayer();
-        Destroy(gameObject);
+        myProperties.isDead = true;
+        _gm.KillPlayer(myProperties);
     }
 }
