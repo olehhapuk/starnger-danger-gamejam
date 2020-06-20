@@ -41,3 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Environment
+    uniqueID: 1069454957
+    locked: 0
+  - name: Interactable
+    uniqueID: 1606984903
+    locked: 0
+  - name: Player
+    uniqueID: 2267961999
+    locked: 0
+  - name: FX
+    uniqueID: 3021310379
+    locked: 0

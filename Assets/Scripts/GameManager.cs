@@ -21,6 +21,10 @@ public class GameManager : MonoBehaviour
             ChangePlayer(0);
         else if (Input.GetButtonDown("2"))
             ChangePlayer(1);
+        else if (Input.GetButtonDown("3"))
+            ChangePlayer(2);
+        else if (Input.GetButtonDown("4"))
+            ChangePlayer(3);
     }
 
     private void ChangePlayer(int index)
@@ -31,8 +35,29 @@ public class GameManager : MonoBehaviour
             return;
         }
         player.myProperties = players[index];
+        ActivePlayer activePlayer;
+        switch (index)
+        {
+            case 0:
+                activePlayer = ActivePlayer.Explosion;
+                break;
+            case 1:
+                activePlayer = ActivePlayer.Gravity;
+                break;
+            case 2:
+                activePlayer = ActivePlayer.Slime;
+                break;
+            case 3:
+                activePlayer = ActivePlayer.Teleport;
+                break;
+            default:
+                return;
+        }
+
+        player.activePlayer = activePlayer;
+        player.GetComponent<Animator>().SetFloat("ActiveCharacter", index);
         player.GetComponent<SpriteRenderer>().sprite = players[index].sprite;
-        player.GetComponentInChildren<Text>().text = players[index].name;
+        player.playerName.text = players[index].name;
     }
 
     public void KillPlayer(PlayerProperties newProperties)
