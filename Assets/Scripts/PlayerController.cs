@@ -9,21 +9,36 @@ public class PlayerController : MonoBehaviour
     public PlayerProperties myProperties;
     public ActivePlayer activePlayer;
     public Text playerName;
+    public Animator animator;
 
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private Vector2 groundCheckSize;
+    [SerializeField] private LayerMask groundLayer;
 
     [Header("Explosion")]
     [SerializeField] private GameObject explosionPrefab;
-    [SerializeField] private Transform shootLocation;
+
+    [Header("Slime")]
+    [SerializeField] private GameObject slime;
+    [SerializeField] private Transform slimePlaceholder;
     
     private GameManager _gm;
     private Rigidbody2D _rb;
 
     private float _moveDir;
+    private bool _canMove = true;
+    private bool _isGrounded;
 
     private void Awake()
     {
         _gm = FindObjectOfType<GameManager>();
         _rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+    }
+
+    private void Start()
+    {
+        _canMove = true;
     }
 
     private void Update()
@@ -31,8 +46,30 @@ public class PlayerController : MonoBehaviour
         if (myProperties.isDead)
             return;
 
-        GetInput();
+        CheckGround();
+
+        if (_canMove)
+            GetInput();
+        else _moveDir = 0;
+        
         Flip();
+    }
+
+    private void FixedUpdate()
+    {
+        _rb.velocity = new Vector2(_moveDir * myProperties.moveSpeed, _rb.velocity.y);
+    }
+
+    private void CheckGround()
+    {
+        _isGrounded = Physics2D.OverlapBox(groundCheck.position, groundCheckSize, 0, groundLayer);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = _isGrounded ? Color.red : Color.green;
+        
+        Gizmos.DrawWireCube(groundCheck.position, groundCheckSize);
     }
 
     private void Flip()
@@ -46,42 +83,52 @@ public class PlayerController : MonoBehaviour
     private void GetInput()
     {
         _moveDir = Input.GetAxisRaw("Horizontal");
+        
+        animator.SetFloat("Speed", Mathf.Abs(_moveDir));
 
-        if (Input.GetButtonDown("Jump"))
-        {
+        if (Input.GetButtonDown("Jump") && _isGrounded)
             _rb.AddForce(new Vector2(0, myProperties.jumpForce), ForceMode2D.Impulse);
-        }
 
         if (Input.GetButtonDown("Fire1"))
         {
             switch (activePlayer)
             {
                 case ActivePlayer.Explosion:
-                    Instantiate(explosionPrefab, shootLocation.position, transform.rotation);
+                    Instantiate(explosionPrefab, transform.position, transform.rotation);
+                    Die();
                     break;
                 case ActivePlayer.Gravity:
-                    print("Flipping gravity!");
+                    Physics2D.gravity *= -1;
+                    animator.SetTrigger("AbilityGravity");
                     break;
                 case ActivePlayer.Slime:
-                    print("Spawning slimes!");
+                    if (_isGrounded)
+                        animator.SetTrigger("AbilitySlime");
                     break;
                 case ActivePlayer.Teleport:
-                    print("Creating teleports!");
+                    animator.SetTrigger("AbilityTeleport");
                     break;
                 default:
                     break;
             }
         }
-
-        if (Input.GetButtonDown("Fire2"))
-        {
-            Die();
-        }
     }
 
-    private void FixedUpdate()
+    public void SpawnSlime()
     {
-        _rb.velocity = new Vector2(_moveDir * myProperties.moveSpeed, _rb.velocity.y);
+        Instantiate(slime, slimePlaceholder.position, transform.rotation);
+    }
+
+    public void RestrictMovement()
+    {
+        _canMove = false;
+        print(_canMove);
+    }
+
+    public void AllowMovement()
+    {
+        _canMove = true;
+        print(_canMove);
     }
 
     private void Die()
