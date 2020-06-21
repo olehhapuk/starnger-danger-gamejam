@@ -104,7 +104,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2027005297
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -7191152459093517876, guid: b7b942526675c16429057295eca0d8bb,
     type: 3}
@@ -196,6 +196,7 @@ MonoBehaviour:
   activePlayer: 0
   playerName: {fileID: 0}
   animator: {fileID: 0}
+  spawner: {fileID: 0}
   groundCheck: {fileID: 3457182982902617154}
   groundCheckSize: {x: 0.5, y: 0.01}
   groundLayer:
@@ -203,8 +204,10 @@ MonoBehaviour:
     m_Bits: 512
   explosionPrefab: {fileID: 7703846647656561917, guid: 70999bc0c7e741c4b8322775fa5144f8,
     type: 3}
+  maxGravitySwitches: 3
   slime: {fileID: 3968721743191856761, guid: c8120b25fdd3e164cacb7c1286a8bdfe, type: 3}
   slimePlaceholder: {fileID: 2563373763662726471}
+  portal: {fileID: 8567358575352891066, guid: 13cf06e40aa52bd479da6f8645477628, type: 3}
 --- !u!1 &3312989164732862469
 GameObject:
   m_ObjectHideFlags: 0

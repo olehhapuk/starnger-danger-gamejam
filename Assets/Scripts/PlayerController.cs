@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +12,9 @@ public class PlayerController : MonoBehaviour
     public Text playerName;
     public Animator animator;
 
+    [SerializeField] private Transform spawner;
+    
+    [Header("Check if grounded")]
     [SerializeField] private Transform groundCheck;
     [SerializeField] private Vector2 groundCheckSize;
     [SerializeField] private LayerMask groundLayer;
@@ -18,9 +22,16 @@ public class PlayerController : MonoBehaviour
     [Header("Explosion")]
     [SerializeField] private GameObject explosionPrefab;
 
+    [Header("Gravity")] [SerializeField] private int maxGravitySwitches = 3;
+
     [Header("Slime")]
     [SerializeField] private GameObject slime;
     [SerializeField] private Transform slimePlaceholder;
+
+    [Header("Portal")]
+    [SerializeField] private GameObject portal;
+
+    private List<Portal> _portals;
     
     private GameManager _gm;
     private Rigidbody2D _rb;
@@ -28,17 +39,21 @@ public class PlayerController : MonoBehaviour
     private float _moveDir;
     private bool _canMove = true;
     private bool _isGrounded;
+    private int _gravitySwitchesLeft;
 
     private void Awake()
     {
         _gm = FindObjectOfType<GameManager>();
         _rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        _portals = new List<Portal>(2);
+        Physics2D.gravity = new Vector2(Physics2D.gravity.x, -Mathf.Abs(Physics2D.gravity.y));
     }
 
     private void Start()
     {
         _canMove = true;
+        _gravitySwitchesLeft = maxGravitySwitches;
     }
 
     private void Update()
@@ -98,7 +113,6 @@ public class PlayerController : MonoBehaviour
                     Die();
                     break;
                 case ActivePlayer.Gravity:
-                    Physics2D.gravity *= -1;
                     animator.SetTrigger("AbilityGravity");
                     break;
                 case ActivePlayer.Slime:
@@ -111,6 +125,28 @@ public class PlayerController : MonoBehaviour
                 default:
                     break;
             }
+        }
+    }
+
+    public void FlipGravity()
+    {
+        Physics2D.gravity *= -1;
+        _gravitySwitchesLeft--;
+        if (_gravitySwitchesLeft <= 0)
+            Die();
+    }
+
+    public void SpawnPortal()
+    {
+        var newPortal = Instantiate(portal, transform.position, transform.rotation);
+        newPortal.GetComponent<Portal>().isBeingUsed = true;
+        _portals.Add(newPortal.GetComponent<Portal>());
+        if (_portals.Count == 2)
+        {
+            _portals[0].otherPortal = _portals[1];
+            _portals[1].otherPortal = _portals[0];
+            _portals.Clear();
+            Die();
         }
     }
 
@@ -131,9 +167,10 @@ public class PlayerController : MonoBehaviour
         print(_canMove);
     }
 
-    private void Die()
+    public void Die()
     {
         myProperties.isDead = true;
         _gm.KillPlayer(myProperties);
+        transform.position = spawner.position;
     }
 }
