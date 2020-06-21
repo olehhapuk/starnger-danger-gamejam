@@ -10,6 +10,9 @@ public class Portal : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (otherPortal == null)
+            return;
+        
         if (other.CompareTag("Player"))
         {
             if (isBeingUsed)

@@ -40,6 +40,7 @@ public class PlayerController : MonoBehaviour
     private bool _canMove = true;
     private bool _isGrounded;
     private int _gravitySwitchesLeft;
+    private int _gravityModifier = 1;
 
     private void Awake()
     {
@@ -54,6 +55,7 @@ public class PlayerController : MonoBehaviour
     {
         _canMove = true;
         _gravitySwitchesLeft = maxGravitySwitches;
+        _gravityModifier = 1;
     }
 
     private void Update()
@@ -89,10 +91,20 @@ public class PlayerController : MonoBehaviour
 
     private void Flip()
     {
-        if (_moveDir < 0)
-            transform.eulerAngles = new Vector2(0, 180);
-        else if (_moveDir > 0)
-            transform.eulerAngles = new Vector2(0, 0);
+        if (_gravityModifier == -1)
+        {
+            if (_moveDir < 0)
+                transform.eulerAngles = new Vector2(180, 180);
+            else if (_moveDir > 0)
+                transform.eulerAngles = new Vector2(180, 0);
+        }
+        else if (_gravityModifier == 1)
+        {
+            if (_moveDir < 0)
+                transform.eulerAngles = new Vector2(0, 180);
+            else if (_moveDir > 0)
+                transform.eulerAngles = new Vector2(0, 0);
+        }
     }
 
     private void GetInput()
@@ -102,7 +114,7 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Speed", Mathf.Abs(_moveDir));
 
         if (Input.GetButtonDown("Jump") && _isGrounded)
-            _rb.AddForce(new Vector2(0, myProperties.jumpForce), ForceMode2D.Impulse);
+            _rb.AddForce(new Vector2(0, myProperties.jumpForce * _gravityModifier), ForceMode2D.Impulse);
 
         if (Input.GetButtonDown("Fire1"))
         {
@@ -120,7 +132,7 @@ public class PlayerController : MonoBehaviour
                         animator.SetTrigger("AbilitySlime");
                     break;
                 case ActivePlayer.Teleport:
-                    animator.SetTrigger("AbilityTeleport");
+                    SpawnPortal();
                     break;
                 default:
                     break;
@@ -130,13 +142,21 @@ public class PlayerController : MonoBehaviour
 
     public void FlipGravity()
     {
+        _gravityModifier *= -1;
+        print(_gravityModifier);
         Physics2D.gravity *= -1;
         _gravitySwitchesLeft--;
+
+        if (_gravityModifier == -1)
+            transform.eulerAngles = new Vector2(180, transform.eulerAngles.y);
+        else
+            transform.eulerAngles = new Vector2(0, transform.eulerAngles.y + 180);
+        
         if (_gravitySwitchesLeft <= 0)
             Die();
     }
 
-    public void SpawnPortal()
+    private void SpawnPortal()
     {
         var newPortal = Instantiate(portal, transform.position, transform.rotation);
         newPortal.GetComponent<Portal>().isBeingUsed = true;
@@ -145,6 +165,8 @@ public class PlayerController : MonoBehaviour
         {
             _portals[0].otherPortal = _portals[1];
             _portals[1].otherPortal = _portals[0];
+            _portals[0].isBeingUsed = false;
+            _portals[1].isBeingUsed = false;
             _portals.Clear();
             Die();
         }
