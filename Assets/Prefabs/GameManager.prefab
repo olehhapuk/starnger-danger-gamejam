@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7679886795752423381
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7679886795752423383}
+  - component: {fileID: 7679886795752423380}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7679886795752423383
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7679886795752423381}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7679886795752423380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7679886795752423381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad39938373b5cab458cb7547df66bf76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  players:
+  - name: Explosive
+    sprite: {fileID: -7191152459093517876, guid: b7b942526675c16429057295eca0d8bb,
+      type: 3}
+    health: 10
+    moveSpeed: 5
+    jumpForce: 10
+    isDead: 0
+  - name: Gravity
+    sprite: {fileID: 2025743697445047712, guid: a25f02c4db160aa4599e5705effc193c,
+      type: 3}
+    health: 15
+    moveSpeed: 9
+    jumpForce: 15
+    isDead: 0
+  - name: Teleport
+    sprite: {fileID: -8771269545915482869, guid: ac3e4595f26c6ef498afa3d2d0eab12f,
+      type: 3}
+    health: 15
+    moveSpeed: 9
+    jumpForce: 15
+    isDead: 0
+  - name: Slime
+    sprite: {fileID: 1013757824518699224, guid: 5f17c503bd3b9154da6efd09670f9e6e,
+      type: 3}
+    health: 15
+    moveSpeed: 9
+    jumpForce: 15
+    isDead: 0

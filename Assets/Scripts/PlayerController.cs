@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
 
     [SerializeField] private Transform spawner;
+    [SerializeField] private PlayerAudio playerAudio;
     
     [Header("Check if grounded")]
     [SerializeField] private Transform groundCheck;
@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
     
     private GameManager _gm;
     private Rigidbody2D _rb;
+    private PlayerAudio _playerAudio;
 
     private float _moveDir;
     private bool _canMove = true;
@@ -46,6 +47,7 @@ public class PlayerController : MonoBehaviour
     {
         _gm = FindObjectOfType<GameManager>();
         _rb = GetComponent<Rigidbody2D>();
+        _playerAudio = GetComponent<PlayerAudio>();
         animator = GetComponent<Animator>();
         _portals = new List<Portal>(2);
         Physics2D.gravity = new Vector2(Physics2D.gravity.x, -Mathf.Abs(Physics2D.gravity.y));
@@ -111,10 +113,30 @@ public class PlayerController : MonoBehaviour
     {
         _moveDir = Input.GetAxisRaw("Horizontal");
         
-        animator.SetFloat("Speed", Mathf.Abs(_moveDir));
+        if (_isGrounded)
+            animator.SetFloat("Speed", Mathf.Abs(_moveDir));
+        else
+            animator.SetFloat("Speed", 0);
+
 
         if (Input.GetButtonDown("Jump") && _isGrounded)
+        {
             _rb.AddForce(new Vector2(0, myProperties.jumpForce * _gravityModifier), ForceMode2D.Impulse);
+            switch (activePlayer)
+            {
+                case ActivePlayer.Explosion:
+                    _playerAudio.PlayAudio("Flamey_Jump");
+                    break;
+                case ActivePlayer.Gravity:
+                    _playerAudio.PlayAudio("Gravity_Jump");
+                    break;
+                case ActivePlayer.Slime:
+                    _playerAudio.PlayAudio("Slime_Jump");
+                    break;
+                default:
+                    break;
+            }
+        }
 
         if (Input.GetButtonDown("Fire1"))
         {
@@ -127,12 +149,12 @@ public class PlayerController : MonoBehaviour
                 case ActivePlayer.Gravity:
                     animator.SetTrigger("AbilityGravity");
                     break;
+                case ActivePlayer.Teleport:
+                    SpawnPortal();
+                    break;
                 case ActivePlayer.Slime:
                     if (_isGrounded)
                         animator.SetTrigger("AbilitySlime");
-                    break;
-                case ActivePlayer.Teleport:
-                    SpawnPortal();
                     break;
                 default:
                     break;
@@ -148,10 +170,16 @@ public class PlayerController : MonoBehaviour
         _gravitySwitchesLeft--;
 
         if (_gravityModifier == -1)
+        {
             transform.eulerAngles = new Vector2(180, transform.eulerAngles.y);
+            playerAudio.PlayAudio("Gravity_Changed");
+        }
         else
+        {
             transform.eulerAngles = new Vector2(0, transform.eulerAngles.y + 180);
-        
+            playerAudio.StopAudio();
+        }
+
         if (_gravitySwitchesLeft <= 0)
             Die();
     }
@@ -159,6 +187,7 @@ public class PlayerController : MonoBehaviour
     private void SpawnPortal()
     {
         var newPortal = Instantiate(portal, transform.position, transform.rotation);
+        _playerAudio.PlayAudio("Portal_Ability");
         newPortal.GetComponent<Portal>().isBeingUsed = true;
         _portals.Add(newPortal.GetComponent<Portal>());
         if (_portals.Count == 2)

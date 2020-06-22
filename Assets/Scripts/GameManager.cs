@@ -13,6 +13,10 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         ChangePlayer(0);
+        if (SceneManager.GetActiveScene().name == "MainMenu")
+            FindObjectOfType<AudioManager>().PlayAudio(SceneManager.GetActiveScene().name);
+        else
+            FindObjectOfType<AudioManager>().PlayAudio("01_Lvl");
     }
 
     private void Update()
@@ -45,10 +49,10 @@ public class GameManager : MonoBehaviour
                 activePlayer = ActivePlayer.Gravity;
                 break;
             case 2:
-                activePlayer = ActivePlayer.Slime;
+                activePlayer = ActivePlayer.Teleport;
                 break;
             case 3:
-                activePlayer = ActivePlayer.Teleport;
+                activePlayer = ActivePlayer.Slime;
                 break;
             default:
                 return;

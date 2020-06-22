@@ -41,9 +41,11 @@ GameObject:
   - component: {fileID: 1447942568796049616}
   - component: {fileID: 1447942568796049631}
   - component: {fileID: 2187286863725134622}
+  - component: {fileID: 5620512816275206819}
   - component: {fileID: 2268891916498372027}
   - component: {fileID: 8447341001048722614}
   - component: {fileID: 1447942568796049630}
+  - component: {fileID: 9012390818717434168}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -137,6 +139,102 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!82 &5620512816275206819
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1447942568796049629}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.7
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!50 &2268891916498372027
 Rigidbody2D:
   serializedVersion: 4
@@ -197,6 +295,7 @@ MonoBehaviour:
   playerName: {fileID: 0}
   animator: {fileID: 0}
   spawner: {fileID: 0}
+  playerAudio: {fileID: 0}
   groundCheck: {fileID: 3457182982902617154}
   groundCheckSize: {x: 0.5, y: 0.01}
   groundLayer:
@@ -208,6 +307,33 @@ MonoBehaviour:
   slime: {fileID: 3968721743191856761, guid: c8120b25fdd3e164cacb7c1286a8bdfe, type: 3}
   slimePlaceholder: {fileID: 2563373763662726471}
   portal: {fileID: 8567358575352891066, guid: 13cf06e40aa52bd479da6f8645477628, type: 3}
+--- !u!114 &9012390818717434168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1447942568796049629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95088ec7a23488540942fb01516b8763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Audios:
+  - Name: Flamey_Footstep
+    AudioClip: {fileID: 8300000, guid: 259d9656a7fb1a94a8fc2126e50c7533, type: 3}
+  - Name: Flamey_Explosion
+    AudioClip: {fileID: 8300000, guid: 25f7d16032ec5d540b08968a9b20f0db, type: 3}
+  - Name: Flamey_Jump
+    AudioClip: {fileID: 8300000, guid: 9296bcb8b993a494ca0d9432087ca37b, type: 3}
+  - Name: Slime_Jump
+    AudioClip: {fileID: 8300000, guid: 8b802d4ae851a2e49a7bbd5f05f8f170, type: 3}
+  - Name: Gravity_Jump
+    AudioClip: {fileID: 8300000, guid: 8c7845328314e19489293ebc87a26d12, type: 3}
+  - Name: Portal_Ability
+    AudioClip: {fileID: 8300000, guid: d9b01adfaaf3cb24bb8c6300874d84c3, type: 3}
+  - Name: Slime_Squeesh
+    AudioClip: {fileID: 8300000, guid: eacb9767feb794e4487ef199a7fe24f5, type: 3}
 --- !u!1 &3312989164732862469
 GameObject:
   m_ObjectHideFlags: 0
