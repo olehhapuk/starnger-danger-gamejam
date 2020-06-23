@@ -49,15 +49,15 @@ MonoBehaviour:
     sprite: {fileID: -7191152459093517876, guid: b7b942526675c16429057295eca0d8bb,
       type: 3}
     health: 10
-    moveSpeed: 5
-    jumpForce: 10
+    moveSpeed: 7
+    jumpForce: 12
     isDead: 0
   - name: Gravity
     sprite: {fileID: 2025743697445047712, guid: a25f02c4db160aa4599e5705effc193c,
       type: 3}
     health: 15
-    moveSpeed: 9
-    jumpForce: 15
+    moveSpeed: 5
+    jumpForce: 10
     isDead: 0
   - name: Teleport
     sprite: {fileID: -8771269545915482869, guid: ac3e4595f26c6ef498afa3d2d0eab12f,

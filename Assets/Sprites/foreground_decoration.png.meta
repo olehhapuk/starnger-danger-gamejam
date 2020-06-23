@@ -137,6 +137,57 @@ TextureImporter:
   - first:
       213: 6795739787687784022
     second: foreground_decoration_44
+  - first:
+      213: -3901198057304217213
+    second: foreground_decoration_0
+  - first:
+      213: -2237100226693070055
+    second: foreground_decoration_1
+  - first:
+      213: 2883806548679394146
+    second: foreground_decoration_2
+  - first:
+      213: -2349653756894804918
+    second: foreground_decoration_3
+  - first:
+      213: 5962736327241758837
+    second: foreground_decoration_4
+  - first:
+      213: -8947115793239095166
+    second: foreground_decoration_5
+  - first:
+      213: -4702482808122316089
+    second: foreground_decoration_6
+  - first:
+      213: 3225798973521247469
+    second: foreground_decoration_7
+  - first:
+      213: 6999907000625781867
+    second: foreground_decoration_8
+  - first:
+      213: 6930040257440951117
+    second: foreground_decoration_9
+  - first:
+      213: -2269908589025175173
+    second: foreground_decoration_10
+  - first:
+      213: -453271795548098954
+    second: foreground_decoration_11
+  - first:
+      213: 6943330432867839653
+    second: foreground_decoration_12
+  - first:
+      213: -1400839121797366306
+    second: foreground_decoration_13
+  - first:
+      213: 5642169740940527016
+    second: foreground_decoration_14
+  - first:
+      213: 3186382420350372734
+    second: foreground_decoration_15
+  - first:
+      213: -6838671892850963323
+    second: foreground_decoration_16
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -238,9 +289,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 480
-        width: 16
-        height: 16
+        y: 464
+        width: 32
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -248,8 +299,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc787eebbb8686120800000000000000
-      internalID: 2407289156400547788
+      spriteID: 38920fb49092cd9c0800000000000000
+      internalID: -3901198057304217213
       vertices: []
       indices: 
       edges: []
@@ -258,10 +309,10 @@ TextureImporter:
       name: foreground_decoration_1
       rect:
         serializedVersion: 2
-        x: 16
-        y: 480
-        width: 16
-        height: 16
+        x: 48
+        y: 464
+        width: 64
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -269,8 +320,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e91c67a412a36eb0800000000000000
-      internalID: -4727756974216963608
+      spriteID: 913830d423934f0e0800000000000000
+      internalID: -2237100226693070055
       vertices: []
       indices: 
       edges: []
@@ -279,10 +330,10 @@ TextureImporter:
       name: foreground_decoration_2
       rect:
         serializedVersion: 2
-        x: 64
-        y: 480
-        width: 16
-        height: 16
+        x: 128
+        y: 464
+        width: 64
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -290,8 +341,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32489c04edf6d8be0800000000000000
-      internalID: -1473398502719912925
+      spriteID: 2630bf6e6c6550820800000000000000
+      internalID: 2883806548679394146
       vertices: []
       indices: 
       edges: []
@@ -300,10 +351,10 @@ TextureImporter:
       name: foreground_decoration_3
       rect:
         serializedVersion: 2
-        x: 96
-        y: 480
-        width: 16
-        height: 16
+        x: 208
+        y: 464
+        width: 64
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -311,8 +362,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c95b4541ff0d8c190800000000000000
-      internalID: -7941868148891535972
+      spriteID: a448f1b6b5a546fd0800000000000000
+      internalID: -2349653756894804918
       vertices: []
       indices: 
       edges: []
@@ -321,10 +372,10 @@ TextureImporter:
       name: foreground_decoration_4
       rect:
         serializedVersion: 2
-        x: 144
-        y: 480
-        width: 16
-        height: 16
+        x: 288
+        y: 464
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -332,8 +383,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e330e5f071e7d160800000000000000
-      internalID: 7050351616949498855
+      spriteID: 578ff820915efb250800000000000000
+      internalID: 5962736327241758837
       vertices: []
       indices: 
       edges: []
@@ -342,10 +393,10 @@ TextureImporter:
       name: foreground_decoration_5
       rect:
         serializedVersion: 2
-        x: 160
-        y: 480
+        x: 336
+        y: 464
         width: 16
-        height: 16
+        height: 9
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -353,8 +404,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cdc25ec3c7ed9c2a0800000000000000
-      internalID: -6716592744067420964
+      spriteID: 28842b3079575d380800000000000000
+      internalID: -8947115793239095166
       vertices: []
       indices: 
       edges: []
@@ -363,10 +414,10 @@ TextureImporter:
       name: foreground_decoration_6
       rect:
         serializedVersion: 2
-        x: 176
-        y: 480
+        x: 368
+        y: 464
         width: 16
-        height: 16
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -374,8 +425,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 46543232f2a37bcc0800000000000000
-      internalID: -3695420995106814620
+      spriteID: 7caec730dcc6dbeb0800000000000000
+      internalID: -4702482808122316089
       vertices: []
       indices: 
       edges: []
@@ -384,10 +435,10 @@ TextureImporter:
       name: foreground_decoration_7
       rect:
         serializedVersion: 2
-        x: 288
-        y: 480
+        x: 400
+        y: 464
         width: 16
-        height: 16
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -395,8 +446,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3e78a68c90ac10630800000000000000
-      internalID: 3891613696390760419
+      spriteID: decbd8d431754cc20800000000000000
+      internalID: 3225798973521247469
       vertices: []
       indices: 
       edges: []
@@ -405,10 +456,10 @@ TextureImporter:
       name: foreground_decoration_8
       rect:
         serializedVersion: 2
-        x: 304
-        y: 480
+        x: 432
+        y: 464
         width: 16
-        height: 16
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -416,8 +467,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 773c675d26b3571f0800000000000000
-      internalID: -1047866042619608201
+      spriteID: b6cd119745aa42160800000000000000
+      internalID: 6999907000625781867
       vertices: []
       indices: 
       edges: []
@@ -427,9 +478,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 464
-        y: 480
-        width: 16
-        height: 16
+        y: 464
+        width: 32
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -437,8 +488,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3e633bb80c648c9d0800000000000000
-      internalID: -2753873379345615133
+      spriteID: d4bacefa5e27c2060800000000000000
+      internalID: 6930040257440951117
       vertices: []
       indices: 
       edges: []
@@ -448,7 +499,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 464
+        y: 416
         width: 16
         height: 16
       alignment: 0
@@ -458,8 +509,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bc918854867d7ef40800000000000000
-      internalID: 5757807491459586507
+      spriteID: b79db8e2a2aaf70e0800000000000000
+      internalID: -2269908589025175173
       vertices: []
       indices: 
       edges: []
@@ -468,8 +519,8 @@ TextureImporter:
       name: foreground_decoration_11
       rect:
         serializedVersion: 2
-        x: 16
-        y: 464
+        x: 32
+        y: 416
         width: 16
         height: 16
       alignment: 0
@@ -479,8 +530,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f5cd58a6f66b07c0800000000000000
-      internalID: -4104073425845369351
+      spriteID: 67ee6a714b7a5b9f0800000000000000
+      internalID: -453271795548098954
       vertices: []
       indices: 
       edges: []
@@ -489,10 +540,10 @@ TextureImporter:
       name: foreground_decoration_12
       rect:
         serializedVersion: 2
-        x: 48
-        y: 464
-        width: 16
-        height: 16
+        x: 64
+        y: 416
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -500,8 +551,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 17905fe797f6a8980800000000000000
-      internalID: -8535887576115639951
+      spriteID: 5ae2f39cd3aab5060800000000000000
+      internalID: 6943330432867839653
       vertices: []
       indices: 
       edges: []
@@ -510,8 +561,8 @@ TextureImporter:
       name: foreground_decoration_13
       rect:
         serializedVersion: 2
-        x: 64
-        y: 464
+        x: 112
+        y: 416
         width: 16
         height: 16
       alignment: 0
@@ -521,8 +572,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e9368b4040de82730800000000000000
-      internalID: 3974687272669307806
+      spriteID: edd3ccd9d383f8ce0800000000000000
+      internalID: -1400839121797366306
       vertices: []
       indices: 
       edges: []
@@ -531,8 +582,8 @@ TextureImporter:
       name: foreground_decoration_14
       rect:
         serializedVersion: 2
-        x: 80
-        y: 464
+        x: 144
+        y: 416
         width: 16
         height: 16
       alignment: 0
@@ -542,8 +593,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f571b0f0e2a8d1ac0800000000000000
-      internalID: -3882795373297985697
+      spriteID: 8a5c7336c730d4e40800000000000000
+      internalID: 5642169740940527016
       vertices: []
       indices: 
       edges: []
@@ -552,8 +603,8 @@ TextureImporter:
       name: foreground_decoration_15
       rect:
         serializedVersion: 2
-        x: 96
-        y: 464
+        x: 176
+        y: 416
         width: 16
         height: 16
       alignment: 0
@@ -563,8 +614,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 47940f37831d611b0800000000000000
-      internalID: -5686127439115171468
+      spriteID: e7b888bdded483c20800000000000000
+      internalID: 3186382420350372734
       vertices: []
       indices: 
       edges: []
@@ -573,94 +624,10 @@ TextureImporter:
       name: foreground_decoration_16
       rect:
         serializedVersion: 2
-        x: 128
-        y: 464
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bb7159ae12e930bb0800000000000000
-      internalID: -4970955695180146757
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: foreground_decoration_17
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 464
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ae8f279cdad929100800000000000000
-      internalID: 113326310372341994
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: foreground_decoration_18
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 464
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: aea1872b0e00acc60800000000000000
-      internalID: 7839079066458659562
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: foreground_decoration_19
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 464
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 87b44a8c9a7db9c60800000000000000
-      internalID: 7826085901702024056
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: foreground_decoration_20
-      rect:
-        serializedVersion: 2
         x: 208
-        y: 464
-        width: 16
-        height: 16
+        y: 416
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -668,512 +635,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 181bc3ba2f1c7cb30800000000000000
-      internalID: 4307624816602296705
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: foreground_decoration_21
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 464
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d2bd89c361dce4210800000000000000
-      internalID: 1319217236255759149
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: foreground_decoration_22
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 464
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9c324125efb4a8cf0800000000000000
-      internalID: -249303273694813239
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: foreground_decoration_23
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 464
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5f1da457ba08d0af0800000000000000
-      internalID: -428544915634728459
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: foreground_decoration_24
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 464
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cd851f4039f5bb650800000000000000
-      internalID: 6249693992954452188
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: foreground_decoration_25
-      rect:
-        serializedVersion: 2
-        x: 304
-        y: 464
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1ecb12af6669a1640800000000000000
-      internalID: 5051515301076778209
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: foreground_decoration_26
-      rect:
-        serializedVersion: 2
-        x: 336
-        y: 464
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fdac217f1dffd3bb0800000000000000
-      internalID: -4954522737779225889
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: foreground_decoration_27
-      rect:
-        serializedVersion: 2
-        x: 368
-        y: 464
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1e603c544bfdce140800000000000000
-      internalID: 4750417672326547169
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: foreground_decoration_28
-      rect:
-        serializedVersion: 2
-        x: 400
-        y: 464
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2c7ee4a8c5c99eb80800000000000000
-      internalID: -8364982911592634430
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: foreground_decoration_29
-      rect:
-        serializedVersion: 2
-        x: 432
-        y: 464
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d1f59893be4bed0f0800000000000000
-      internalID: -1090235137401463011
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: foreground_decoration_30
-      rect:
-        serializedVersion: 2
-        x: 464
-        y: 464
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 33453863b8ba39d60800000000000000
-      internalID: 7895843186113991731
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: foreground_decoration_31
-      rect:
-        serializedVersion: 2
-        x: 480
-        y: 464
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d02ab2684d14a02e0800000000000000
-      internalID: -2158840690330852851
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: foreground_decoration_32
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 448
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2ffa48b68ed29c4c0800000000000000
-      internalID: -4266828695697313806
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: foreground_decoration_33
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 448
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 778f3160e1eae9fc0800000000000000
-      internalID: -3486157617563961225
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: foreground_decoration_34
-      rect:
-        serializedVersion: 2
-        x: 208
-        y: 448
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6dfa5d07f100165f0800000000000000
-      internalID: -765330326639235114
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: foreground_decoration_35
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 448
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f869dd55802686a60800000000000000
-      internalID: 7667486153538115215
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: foreground_decoration_36
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 432
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e7ad2c9b33e3fbb90800000000000000
-      internalID: -7223986885398177154
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: foreground_decoration_37
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 432
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ea1e851dbb6b8f890800000000000000
-      internalID: -7423983067932859986
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: foreground_decoration_38
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 432
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3909e96c0a842ef70800000000000000
-      internalID: 9215007642917703827
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: foreground_decoration_39
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 432
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 230ab237c4d880310800000000000000
-      internalID: 1371501446023585842
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: foreground_decoration_40
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 432
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e38ed3befe8bba050800000000000000
-      internalID: 5812943084635154494
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: foreground_decoration_41
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 432
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d2fdd5f3ab0bcc7d0800000000000000
-      internalID: -2896746146332549331
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: foreground_decoration_42
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 432
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8b4f95fa203023b00800000000000000
-      internalID: 806710593319466168
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: foreground_decoration_43
-      rect:
-        serializedVersion: 2
-        x: 208
-        y: 432
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d8ef1bca621a490e0800000000000000
-      internalID: -2264007525182341491
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: foreground_decoration_44
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 432
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 65e6e1fd4515f4e50800000000000000
-      internalID: 6795739787687784022
+      spriteID: 58c8b2375282811a0800000000000000
+      internalID: -6838671892850963323
       vertices: []
       indices: 
       edges: []
