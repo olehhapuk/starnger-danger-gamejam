@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class WorldBoundary : MonoBehaviour
+public class Spikes : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D other)
     {

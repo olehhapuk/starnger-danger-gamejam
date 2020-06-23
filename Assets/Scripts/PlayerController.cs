@@ -119,9 +119,10 @@ public class PlayerController : MonoBehaviour
             animator.SetFloat("Speed", 0);
 
 
-        if (Input.GetButtonDown("Jump") && _isGrounded)
+        if (Input.GetButtonDown("Jump") && _isGrounded && _gravityModifier != -1)
         {
             _rb.AddForce(new Vector2(0, myProperties.jumpForce * _gravityModifier), ForceMode2D.Impulse);
+            
             switch (activePlayer)
             {
                 case ActivePlayer.Explosion:
@@ -147,10 +148,12 @@ public class PlayerController : MonoBehaviour
                     Die();
                     break;
                 case ActivePlayer.Gravity:
-                    animator.SetTrigger("AbilityGravity");
+                    if (_gravitySwitchesLeft > 1)
+                        animator.SetTrigger("AbilityGravity");
                     break;
                 case ActivePlayer.Teleport:
-                    SpawnPortal();
+                    if (_isGrounded)
+                        SpawnPortal();
                     break;
                 case ActivePlayer.Slime:
                     if (_isGrounded)

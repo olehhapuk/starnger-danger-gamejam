@@ -10,13 +10,29 @@ public class GameManager : MonoBehaviour
     [SerializeField] private PlayerController player;
     [SerializeField] private PlayerProperties[] players;
 
+    private AudioManager _audioManager;
+
+    private void Awake()
+    {
+        _audioManager = FindObjectOfType<AudioManager>();
+    }
+
     private void Start()
     {
         ChangePlayer(0);
-        if (SceneManager.GetActiveScene().name == "MainMenu")
-            FindObjectOfType<AudioManager>().PlayAudio(SceneManager.GetActiveScene().name);
+        var activeScene = SceneManager.GetActiveScene().name;
+        print(_audioManager.currentlyPlaying);
+        
+        if (activeScene == "MainMenu")
+        {
+            if (_audioManager.currentlyPlaying != activeScene)
+                _audioManager.PlayAudio(activeScene);
+        }
         else
-            FindObjectOfType<AudioManager>().PlayAudio("01_Lvl");
+        {
+            if (_audioManager.currentlyPlaying != "01_Lvl")
+                _audioManager.PlayAudio("01_Lvl");
+        }
     }
 
     private void Update()

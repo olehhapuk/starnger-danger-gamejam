@@ -12,13 +12,25 @@ public class Audio
 
 public class AudioManager : MonoBehaviour
 {
+    public string currentlyPlaying;
+    
     [SerializeField] private List<Audio> audios;
     
-    private static AudioManager _instance;
     private AudioSource _audioSource;
+    private static AudioManager _instance;
 
     private void Awake()
     {
+        if (_instance == null)
+            _instance = this;
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        DontDestroyOnLoad(gameObject);
+        
         _audioSource = GetComponent<AudioSource>();
     }
 
@@ -30,6 +42,7 @@ public class AudioManager : MonoBehaviour
             {
                 _audioSource.clip = audio.AudioClip;
                 _audioSource.Play();
+                currentlyPlaying = audioName;
             }
         }
     }
