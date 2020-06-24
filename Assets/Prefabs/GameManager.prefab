@@ -73,3 +73,19 @@ MonoBehaviour:
     moveSpeed: 9
     jumpForce: 15
     isDead: 0
+  playerIcons:
+  - {fileID: 21300000, guid: 51124170d1893fb4dabc65ef26bc378b, type: 3}
+  - {fileID: 21300000, guid: db5b00d24b10fd945ad77cce0e358e85, type: 3}
+  - {fileID: 21300000, guid: c300643715fff8e4cb70d18d6c4ca180, type: 3}
+  - {fileID: 21300000, guid: 3f97d210611fcf24fb4a5a8a46a3b9ce, type: 3}
+  playerActiveIcons:
+  - {fileID: 21300000, guid: 2f85787817218aa4183a9f1295bc50c0, type: 3}
+  - {fileID: 21300000, guid: 154a427ee39f0914e9b37ecc38d5bda8, type: 3}
+  - {fileID: 21300000, guid: 3ea2731d68903b34384aa0b3a36e73bb, type: 3}
+  - {fileID: 21300000, guid: 76c243bd8cba78e4fb9070e0b910a41a, type: 3}
+  playerDeadIcons:
+  - {fileID: 21300000, guid: e4985f31281f54c4f83e15ace96a5e87, type: 3}
+  - {fileID: 21300000, guid: eb1c3b32bff48e24d81ad7c7d784ae06, type: 3}
+  - {fileID: 21300000, guid: 126786d0a1f9e214abc2ddc7438e7b84, type: 3}
+  - {fileID: 21300000, guid: 5ec10c76ff1b7484188074bf22939c2e, type: 3}
+  playerImages: []

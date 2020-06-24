@@ -9,6 +9,10 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private PlayerController player;
     [SerializeField] private PlayerProperties[] players;
+    [SerializeField] private List<Sprite> playerIcons;
+    [SerializeField] private List<Sprite> playerActiveIcons;
+    [SerializeField] private List<Sprite> playerDeadIcons;
+    [SerializeField] private List<Image> playerImages;
 
     private AudioManager _audioManager;
 
@@ -21,7 +25,6 @@ public class GameManager : MonoBehaviour
     {
         ChangePlayer(0);
         var activeScene = SceneManager.GetActiveScene().name;
-        print(_audioManager.currentlyPlaying);
         
         if (activeScene == "MainMenu")
         {
@@ -51,7 +54,6 @@ public class GameManager : MonoBehaviour
     {
         if (players[index].isDead)
         {
-            print("Can't do that");
             return;
         }
         player.myProperties = players[index];
@@ -77,7 +79,18 @@ public class GameManager : MonoBehaviour
         player.activePlayer = activePlayer;
         player.GetComponent<Animator>().SetFloat("ActiveCharacter", index);
         player.GetComponent<SpriteRenderer>().sprite = players[index].sprite;
-        player.playerName.text = players[index].name;
+        for (int i = 0; i < players.Length; i++)
+        {
+            if (i == index)
+                playerImages[i].sprite = playerActiveIcons[i];
+            else
+            {
+                if (players[i].isDead)
+                    playerImages[i].sprite = playerDeadIcons[i];
+                else
+                    playerImages[i].sprite = playerIcons[i];
+            }
+        }
     }
 
     public void KillPlayer(PlayerProperties newProperties)

@@ -8,7 +8,6 @@ public class PlayerController : MonoBehaviour
 {
     public PlayerProperties myProperties;
     public ActivePlayer activePlayer;
-    public Text playerName;
     public Animator animator;
 
     [SerializeField] private Transform spawner;
@@ -168,7 +167,6 @@ public class PlayerController : MonoBehaviour
     public void FlipGravity()
     {
         _gravityModifier *= -1;
-        print(_gravityModifier);
         Physics2D.gravity *= -1;
         _gravitySwitchesLeft--;
 
@@ -212,13 +210,11 @@ public class PlayerController : MonoBehaviour
     public void RestrictMovement()
     {
         _canMove = false;
-        print(_canMove);
     }
 
     public void AllowMovement()
     {
         _canMove = true;
-        print(_canMove);
     }
 
     public void Die()
