@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,12 +14,15 @@ public class GameManager : MonoBehaviour
     [SerializeField] private List<Sprite> playerActiveIcons;
     [SerializeField] private List<Sprite> playerDeadIcons;
     [SerializeField] private List<Image> playerImages;
+    [SerializeField] private List<AudioClip> audios;
 
     private AudioManager _audioManager;
+    private AudioSource _audioSource;
 
     private void Awake()
     {
         _audioManager = FindObjectOfType<AudioManager>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -26,15 +30,17 @@ public class GameManager : MonoBehaviour
         ChangePlayer(0);
         var activeScene = SceneManager.GetActiveScene().name;
         
-        if (activeScene == "MainMenu")
+        if (activeScene == "MainMenu" || activeScene == "01_Lvl" || activeScene == "02_Lvl")
         {
             if (_audioManager.currentlyPlaying != activeScene)
                 _audioManager.PlayAudio(activeScene);
         }
         else
         {
-            if (_audioManager.currentlyPlaying != "01_Lvl")
-                _audioManager.PlayAudio("01_Lvl");
+            var index = Random.Range(1, 3);
+            var audioToPlay = "0" + index + "_Lvl";
+            if (_audioManager.currentlyPlaying != audioToPlay)
+                _audioManager.PlayAudio(audioToPlay);
         }
     }
 
@@ -54,6 +60,8 @@ public class GameManager : MonoBehaviour
     {
         if (players[index].isDead)
         {
+            _audioSource.clip = audios[0];
+            _audioSource.Play();
             return;
         }
         player.myProperties = players[index];
@@ -79,6 +87,8 @@ public class GameManager : MonoBehaviour
         player.activePlayer = activePlayer;
         player.GetComponent<Animator>().SetFloat("ActiveCharacter", index);
         player.GetComponent<SpriteRenderer>().sprite = players[index].sprite;
+        _audioSource.clip = audios[1];
+        _audioSource.Play();
         for (int i = 0; i < players.Length; i++)
         {
             if (i == index)
