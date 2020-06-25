@@ -21,6 +21,8 @@ public class Portal : MonoBehaviour
             {
                 otherPortal.isBeingUsed = true;
                 other.transform.position = otherPortal.transform.position;
+                var otherRb = other.GetComponent<Rigidbody2D>();
+                otherRb.velocity = new Vector2(otherRb.velocity.x, -otherRb.velocity.y);
             }
         }
     }

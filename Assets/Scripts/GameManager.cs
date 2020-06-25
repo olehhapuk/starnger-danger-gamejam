@@ -30,18 +30,8 @@ public class GameManager : MonoBehaviour
         ChangePlayer(0);
         var activeScene = SceneManager.GetActiveScene().name;
         
-        if (activeScene == "MainMenu" || activeScene == "01_Lvl" || activeScene == "02_Lvl")
-        {
-            if (_audioManager.currentlyPlaying != activeScene)
-                _audioManager.PlayAudio(activeScene);
-        }
-        else
-        {
-            var index = Random.Range(1, 3);
-            var audioToPlay = "0" + index + "_Lvl";
-            if (_audioManager.currentlyPlaying != audioToPlay)
-                _audioManager.PlayAudio(audioToPlay);
-        }
+        if (_audioManager.currentlyPlaying != activeScene)
+            _audioManager.PlayAudio(activeScene);
     }
 
     private void Update()
