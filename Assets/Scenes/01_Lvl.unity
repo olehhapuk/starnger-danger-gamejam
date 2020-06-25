@@ -306,7 +306,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'you cannot use ''jump'' while gravity is flipped.
+  m_Text: 'you can''t use ''jump'' while gravity is flipped.
 
     flip gravity back
     to normal by activating his ability once more'
@@ -544,8 +544,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00000020862, y: 1.03}
-  m_SizeDelta: {x: 4.141325, y: 2.42}
+  m_AnchoredPosition: {x: 0.14, y: 1.03}
+  m_SizeDelta: {x: 3.74, y: 2.42}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1219288782
 MonoBehaviour:

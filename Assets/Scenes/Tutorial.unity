@@ -19650,7 +19650,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Each character has thier own ability, but they can only use it once.
+  m_Text: Each character has their own ability, but they can use them only once
 --- !u!222 &569796077
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -37749,7 +37749,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'finnish portal
+  m_Text: 'finish portal
 
     |
 
